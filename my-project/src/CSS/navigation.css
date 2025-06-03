@@ -1,0 +1,12 @@
+nav{
+    padding: 10px;
+    height: 80px;
+    width: 100vw;
+    gap: 30px;
+    align-items: center;
+}
+
+img{
+    width: 100px;
+    height: 50px;
+}
