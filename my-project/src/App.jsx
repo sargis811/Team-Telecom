@@ -8,6 +8,7 @@ import { Navigation } from './Components/Navigation.jsx'
 import { Header } from './Components/Header.jsx'
 import { Footer } from './Components/Footer.jsx'
 import { Main } from './Components/Main.jsx'
+import Page from './Components/Favourites/Page.jsx';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route index element={<Main/>}/>
             <Route path="/business" element={<PageApp/>}/>
             <Route path='/eshop' element={<PageApp2/>}/>  
+            <Route path='/favourites' element={<Page/>}/>
           </Routes>
           <Footer/>
     </BrowserRouter>

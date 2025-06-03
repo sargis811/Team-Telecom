@@ -142,39 +142,39 @@ export default function NewsSlider() {
           >
             {group.map((slide,i) => (
               <div
-                key={slide.id}
-                className="relative flex flex-col items-center p-2 mx-1 w-[30%]  shadow-md"
-              >
-                <div className="relative w-full h-48 overflow-hidden rounded-lg">
-                  <img
-                    src={slide.image}
-                    alt={`slide`}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute top-[10px] right-[10px] p-[5px] bg-gray-100 rounded-[50px] opacity-[0.5]">
-                    <i className="fa-regular fa-heart" style={{color: (likedContext.liked).includes(slide.id) ? 'red' : 'black'}} onClick={(e) => {
-                      if(likedContext.liked.includes(slide.id)){
-                        likedContext.liked.forEach((el, i2) => {
-                          if(el == slide.id){
-                            likedContext.liked.splice(i2, 1)
-                            console.log(1);
-                          }
-                        })
-                        likedContext.setLiked(() => [...(likedContext.liked)])
-                      } else{
-                        likedContext.setLiked([...(likedContext.liked), slide.id])
-                      }
-                    }}></i>
-                  </div>
+              key={slide.id}
+              className="relative flex flex-col items-center p-2 mx-1 w-[30%]  shadow-md"
+            >
+              <div className="relative w-full h-48 overflow-hidden rounded-lg">
+                <img
+                  src={slide.image}
+                  alt={`slide`}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute top-[10px] right-[10px] p-[5px] bg-gray-100 rounded-[50px] opacity-[0.5]">
+                  <i className="fa-regular fa-heart" style={{color: (likedContext.liked).includes(slide.id) ? 'red' : 'black'}} onClick={(e) => {
+                    if(likedContext.liked.includes(slide.id)){
+                      likedContext.liked.forEach((el, i2) => {
+                        if(el == slide.id){
+                          likedContext.liked.splice(i2, 1)
+                          console.log(1);
+                        }
+                      })
+                      likedContext.setLiked(() => [...(likedContext.liked)])
+                    } else{
+                      likedContext.setLiked([...(likedContext.liked), slide.id])
+                    }
+                  }}></i>
                 </div>
-
-                <p className="mt-2 text-sm text-gray-500">{slide.date}</p>
-
-
-                <p className="text-center text-gray-800 text-sm font-medium">
-                  {slide.text}
-                </p>
               </div>
+
+              <p className="mt-2 text-sm text-gray-500">{slide.date}</p>
+
+
+              <p className="text-center text-gray-800 text-sm font-medium">
+                {slide.text}
+              </p>
+            </div>
             ))}
           </div>
         ))}
