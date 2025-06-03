@@ -9,6 +9,7 @@ import { Header } from './Components/Header.jsx'
 import { Footer } from './Components/Footer.jsx'
 import { Main } from './Components/Main.jsx'
 import Page from './Components/Favourites/Page.jsx';
+import TeamPay from './Components/TeamPay/TeamPay.jsx';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/business" element={<PageApp/>}/>
             <Route path='/eshop' element={<PageApp2/>}/>  
             <Route path='/favourites' element={<Page/>}/>
+            <Route path='/teamPay' element={<TeamPay/>}/>
           </Routes>
           <Footer/>
     </BrowserRouter>
