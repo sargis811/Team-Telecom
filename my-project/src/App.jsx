@@ -10,6 +10,7 @@ import { Main } from './Components/Main.jsx'
 import Page from './Components/Favourites/Page.jsx';
 import TeamPay from './Components/TeamPay/TeamPay.jsx';
 import AboutUs from './Components/AboutUs/AboutUs.jsx'
+import TeamMusemum from './Components/TeamMuseum/TeamMuseum.jsx';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path='/favourites' element={<Page/>}/>
             <Route path='/teamPay' element={<TeamPay/>}/>
             <Route path='/aboutus' element={<AboutUs/>}/>
+            <Route path='/teamMuseum' element={<TeamMusemum/>}/>
           </Routes>
           <Footer/>
     </BrowserRouter>
