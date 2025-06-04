@@ -2,7 +2,7 @@ import QrAndApp from "./QrAndApp"
 import FooterList from "./FooterList"
 
 let l2 = [
-    ["Մեր մասին"],
+    ["Մեր մասին", '/aboutus'],
     ["Կապի թանգարան"],
     ["Նորություններ"],
     ["Աշխատանք Տելեկոմ Արմենիայում"],
