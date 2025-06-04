@@ -1,3 +1,5 @@
+import MainSlider from "./TeamPaySlider.jsx";
+
 export default  function TeamPay(){
     return (
         <div className="flex flex-col w-[100vw] justify-center gap-[50px] ml-[100px] mt-[50px]">
@@ -41,6 +43,29 @@ export default  function TeamPay(){
                     </div>
                 </div>
                 </div>
+            </div>
+            <div className="flex flex-col flex-start">
+            <div className="flex w-[800px] mb-[50px]">
+                <div className="flex w-[500px] justify-center">
+                    <div className="p-[20px] border-b-[5px] border-blue-400">
+                        iOS
+                    </div>
+                    <div className="p-[20px] border-b-[2px] border-gray-400">
+                        Android
+                    </div>
+                </div>
+            </div>
+            <MainSlider/>
+            <ul className="list-disc mt-[20px] ml-[60px]">
+                <li>Էլեկտրոնային դրամապանակ ավելի քան 50 տեսակի վճարումների համար</li>
+                <li>Հատուկ առաջարկեր և ակցիաներ</li>
+            </ul>
+            <div className="flex flex-col gap-[80px] mt-[50px] ml-[50px]">
+                <h1 className="text-[30px]">Այլ Հավելվածներ</h1>
+                <div>
+                    <MoreApplications list={list}/>
+                </div>
+            </div>
             </div>
         </div>
     )
