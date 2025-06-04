@@ -1,4 +1,16 @@
+import MoreApplications from "./MoreApplications.jsx";
 import MainSlider from "./TeamPaySlider.jsx";
+
+let list = [
+    {url: 'https://www.telecomarmenia.am/images/team_apps/1/16510708696227.png', title: 'My Team', text: `My Team հավելվածի
+միջոցով Դուք կարող եք՝ 
+Հաշվեկշռի և փաթեթների
+մնացորդների… `, button: 'Միանալ'},
+    {url: 'https://www.telecomarmenia.am/images/team_apps/1/17116228874075.png', title: 'Team Energy', text: `Team Energy հավելվածի միջոցով
+կարող եք գտնել մոտակա
+էլեկտրական լիցքավորման կայանը, 
+հետևելով քայլերի… `, button: 'Միանալ'}
+]
 
 export default  function TeamPay(){
     return (
