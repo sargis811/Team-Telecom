@@ -1,6 +1,6 @@
 import { useState, useEffect, createContext, useContext } from "react";
 import { CiHeart } from "react-icons/ci";
-
+import { useFavouriteStore } from "../favouriteStore";
 let names = [
     'Team Telecom Armenia-ն Տավուշում ամբողջովին վերազինել է բջջային ցանցը',
     'Արի՛ ժամանակի միջով ճամփորդելու. Team-ի Կապի թանգարանը միացել է թանգարանային տոներին',
@@ -97,10 +97,8 @@ const extendedGroups = [
 export default function NewsSlider() {
   const [current, setCurrent] = useState(1);
   const [transitionEnabled, setTransitionEnabled] = useState(true);
-  const likedContext = useContext(UserContext)
-  useEffect(() => {
-    localStorage.setItem("liked", JSON.stringify(likedContext.liked));
-  }, [likedContext.liked])
+  const setFavourite = useFavouriteStore((state) => state.setFavourite);4
+  const liked = useFavouriteStore((state) => state.favourites);
   useEffect(() => {
     if (current === 0) {
       setTimeout(() => {
@@ -152,18 +150,8 @@ export default function NewsSlider() {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute top-[10px] right-[10px] p-[5px] bg-gray-100 rounded-[50px] opacity-[0.5]">
-                  <i className="fa-regular fa-heart" style={{color: (likedContext.liked).includes(slide.id) ? 'red' : 'black'}} onClick={(e) => {
-                    if(likedContext.liked.includes(slide.id)){
-                      likedContext.liked.forEach((el, i2) => {
-                        if(el == slide.id){
-                          likedContext.liked.splice(i2, 1)
-                          console.log(1);
-                        }
-                      })
-                      likedContext.setLiked(() => [...(likedContext.liked)])
-                    } else{
-                      likedContext.setLiked([...(likedContext.liked), slide.id])
-                    }
+                  <i className="fa-regular fa-heart" style={{color: liked.includes(slide.id) ? 'red' : 'black'}} onClick={(e) => {
+                    setFavourite(slide.id)
                   }}></i>
                 </div>
               </div>
@@ -210,14 +198,4 @@ export default function NewsSlider() {
   );
 }
 
-export const UserContext = createContext([]);
 
-export const UserProvider = ({ children }) => {
-  const [liked, setLiked] = useState((JSON.parse(localStorage.getItem('liked'))));
-
-  return (
-    <UserContext.Provider value={{ liked, setLiked }}>
-      {children}
-    </UserContext.Provider>
-  );
-};

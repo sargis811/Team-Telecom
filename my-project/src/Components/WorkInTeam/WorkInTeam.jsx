@@ -121,7 +121,7 @@ export default function WorkInTeam(){
             </div>
             <div className="flex gap-[20px]">
                 <div className="bg-gray-200 p-[10px] rounded-[5px]">
-                    2025.06.04 - 2025.06.04 <i class="fa-solid fa-calendar-days"></i>
+                    2025.06.04 - 2025.06.04 <i className="fa-solid fa-calendar-days"></i>
                 </div>
                 <button className="p-[10px] bg-red-500 text-white rounded-[20px]">
                     Որոնում

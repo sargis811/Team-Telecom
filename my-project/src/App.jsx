@@ -17,7 +17,7 @@ function App() {
   return (
     <>
     <BrowserRouter>
-          <div className=" z-[2]">
+          <div className='mr-[0]'>
             <Header/>
             <Navigation/>
           </div> 
